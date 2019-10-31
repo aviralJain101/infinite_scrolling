@@ -22,11 +22,11 @@ class RandomWordsState extends State<RandomWords> {
         itemBuilder: (context, i) {
           if (i.isOdd) return Divider();
 
-          final index = i ~/ 2;
-          if (index >= _suggestions.length) {
+      
+          if (i>= _suggestions.length) {
             _suggestions.addAll(generateWordPairs().take(10));
           }
-          return _buildRow(_suggestions[index]);
+          return _buildRow(_suggestions[i]);
         });
   }
 
